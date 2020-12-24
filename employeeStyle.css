@@ -1,0 +1,96 @@
+* {
+padding: 0;
+margin: 0;
+font-size: 30px;
+font-family: 'BadScript';
+color:white;
+}
+body{
+  /*height:100%;
+  width:90%;*/
+  background-image: url("https://image.freepik.com/free-vector/barber-shop-seamless-vector-pattern-beauty-hairdresser-salon-flat-icon-background_109722-30.jpg");
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.container{
+  background: black;
+  align-self: center;
+  width:75%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+#name{
+  font-size: 55px;
+}
+.main-info{
+  width: 100%;
+  display:flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+@media all and (max-width: 1300px){
+  .main-info{
+    flex-direction: column;
+  }
+}
+.text{
+  margin: 30px;
+  min-width: 200px;
+  max-width: 75%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+#img{
+  margin-left: 55px;
+}
+.haircuts{
+/*  padding-top: 150px;*/
+  margin: 35px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+}
+.haircutBlock{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  padding:10px;
+  border-radius: 15px;
+  min-width: 100px;
+  margin: 25px;
+  color:white;
+  font-size: 25px;
+  font-family: 'Poiret-One' strong;
+  background-image: url("https://images.kashamalasha.com/201505200020-kashamalasha-com.gif");
+  background-position: center;
+}
+#contacts{
+  width: 100%;
+  margin-bottom: 35px;
+  margin-left: 75px;
+  margin-right: 75px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.contact img{
+  margin-left: 55px;
+  margin-bottom: 25px;
+  margin-right: 55px;
+  width:55px;
+  height: 55px;
+  border-radius: 50%;
+}
+.contactblock{
+  display: flex;
+  flex-direction: row;
+}

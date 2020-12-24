@@ -1,0 +1,378 @@
+* {
+padding: 0;
+margin: 0;
+font-size: 30px;
+font-family: 'BadScript';
+}
+html{
+  height: 100%;
+}
+body{
+  height:100%;
+}
+.container{
+  display: flex;
+  overflow: hidden;
+  background-image: url("https://image.freepik.com/free-vector/barber-shop-seamless-vector-pattern-beauty-hairdresser-salon-flat-icon-background_109722-30.jpg");
+  background-repeat: repeat;
+  background-size: auto;
+  justify-content:flex-start;
+  flex-direction: column;
+  align-items: center;
+}
+.content-area{
+  width:70%;
+  background-color: black;
+  color:white;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+}
+h1{
+  font-family: 'Amatic';
+  font-size: 80px;
+}
+header{
+    padding: 25px 25px;
+}
+h1 span{
+  font-family: 'Amatic';
+}
+h2{
+  font-size: 45px;
+}
+.heading{
+  font-size: inherit;
+}
+
+.heading:before{
+  content: open-quote;
+}
+.heading:after{
+  content: close-quote;
+}
+nav div{
+  font-size: 20px;
+}
+nav{
+  margin: 100px;
+}
+.menu{
+  z-index: 2;
+  transition: all 0.3s;
+  position:fixed;
+  top: 10px;
+  left:10px;
+  width: 13%;
+  height: 50px;
+  border-radius: 5px;
+  background-image: url("https://i.gifer.com/77C8.gif");
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.menu:hover{
+  transition: all 0.3s;
+  width:13%;
+  height: 550px;
+  background-image: url("https://img.freepik.com/free-photo/dark-and-black-chalkboard-background_28629-940.jpg?size=626&ext=jpg");
+  border-radius: 15px;
+  padding-top: 8px;
+  padding-left: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+.menu ul li a i{
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: all 1s;
+             transition: all 1s;
+}
+.menu ul{
+  transition: all 0.3s;
+  display: none;
+  list-style-type: none;
+}
+.menu ul li a{
+    text-decoration: none;
+    transition: 1s;
+}
+.menu:hover ul{
+  height: 100%;
+  transition: all 1s;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  opacity: 1;
+  height:70%;
+}
+.menu:hover ul li a i{
+  opacity: 1;
+  padding:5px;
+  font-family: 'Poiret-One';
+  visibility: visible;
+  color: white;
+  -webkit-transition: all 1s;
+             transition: all 1s;
+}
+.menu:hover ul li a i:hover{
+  border-bottom:2px solid white;
+}
+.menu:hover img{
+  display: none;
+}
+@media all and (max-width: 1300px){
+  .menu{
+    display: none;
+  }
+}
+.slider-container{
+  z-index: 1;
+  position : relative;
+  width:100%;
+  display: flex;
+  justify-content: center;
+  font-style: "Stalinist-One";
+  padding-bottom: 25px;
+}
+.slider-nobuttons{
+  overflow:hidden;
+  width:80%;
+}
+.slider-buttons{
+  height: 100%;
+  width:100%;
+  position:absolute;
+  z-index: 2;
+  display: flex;
+  top:0px;
+}
+.slider-buttons button{
+  height: 100%;
+  width:50%;
+  opacity:0;
+}
+.slider-track{
+  display: flex;
+  transition: .2s;
+}
+.slider-item{
+  height: 500px;
+  min-width:100%;
+  background-color: black;
+  margin-right: 2px;
+
+}
+.first{
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+}
+.slider-item img{
+  opacity: 1;
+}
+.slider-buttons{
+  text-align: center;
+}
+.under-slider{
+  align-self: center;
+}
+.employee{
+  display: flex;
+  align-items: center;
+  width:100%;
+  flex-direction: column;
+}
+.content-wrapper{
+  display: flex;
+  flex-wrap: wrap;
+  width:95%;
+  justify-content: center;
+}
+.one-employee{
+  transition: 0.5s;
+  color:black;
+  background: white;
+  height: 350px;
+  width: 300px;
+  margin:2.5%;
+  border-radius:15px;
+  display:flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+.one-employee:hover{
+  margin-top: 50px;
+  transition: 0.5s;
+  box-shadow: 0px -10px 25px white;
+}
+@media all and (max-width: 1300px){
+  .one-employee:hover{}
+}
+.chat{
+  position: fixed;
+  width:50px;
+  height:50px;
+  right:50px;
+  bottom: 50px;
+  background: black;
+  border-radius: 50%;
+}
+.chat ul{
+  display: none;
+}
+.one-employee img{
+  transition:0.5s;
+  width:150px;
+  height:150px;
+  border-radius: 50%;
+  margin-top:10px;
+  border: 2px solid black;
+}
+.one-employee img:hover{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  transition: 0.5s;
+  border-radius: 15px;;
+  width:250px;
+  height:250px;
+}
+@media all and (max-width: 1300px){
+  .one-employee img:hover{}
+}
+.one-employee span{
+  width:90%;
+  font-size: 20px;
+  font-family: 'Amatic';
+}
+.one-employee:nth-child(4n+1){
+  background-color: #fe4725;
+}
+.one-employee:nth-child(4n+2){
+  background-color: #87ba39;
+}
+.one-employee:nth-child(4n+3){
+  background-color: #649bde;
+}
+.one-employee:nth-child(4n+4){
+  background-color: #fdc300;
+}
+.price-list .images img{
+  position:absolute;
+  opacity:0;
+  left:20%;
+  /*top:10%;*/
+  margin-bottom: 100px;
+  height:60%;
+  width:25%;
+}
+.images{
+  display: block;
+  height:418px;
+  width:335px;
+  align-self: flex-start;
+}
+.haircut{
+  width:100%;
+  display: flex;
+  flex-direction:column;
+  justify-content: space-between;
+  align-items: center;
+}
+.price-list{
+  right:20%;
+  width:100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+@media all and (max-width: 1300px){
+  .images{
+    display: none;
+  }
+}
+.price-list ul{
+  width: 50%;
+  right:0;
+  padding-left: 20%;
+    list-style-type: none;
+    text-decoration: underline;
+}
+@media all and (max-width: 1300px){
+  .price-list ul{
+    padding-left: 0;
+    width: 100%;
+  }
+}
+.price-list ul li .haircut-style{
+  display: flex;
+  justify-content: space-between;
+}
+.map{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /*width:180%;*/
+}
+@media all and (max-width: 1300px){
+  .map{
+    width: 250px;
+    height:400px;
+  }
+}
+.haircut-style .price{
+  padding-left:150px;
+}
+#map{
+  padding-bottom: 100px;
+  font-style: normal;
+  font-size: 15px;
+}
+.work{
+  width: 90%;
+  margin-bottom: 25px;
+}
+footer{
+
+  padding: 55px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+
+}
+#contacts{
+  width: 100%;
+  margin-bottom: 35px;
+  margin-left: 75px;
+  margin-right: 75px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.contactblock img{
+  width:55px;
+  height: 55px;
+  border-radius: 50%;
+  padding: 10px;
+}
+.contactblock{
+  margin : 20px;
+  border-radius: 35px;
+  background-color: black;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.contact{
+  color:white;
+  padding: 10px;
+}

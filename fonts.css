@@ -1,0 +1,36 @@
+@font-face{
+  font-family: "Amatic";
+  src: url("fonts/Amatic_SC/AmaticSC-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face{
+  font-family: "Architects-Daughter";
+  src: url("fonts/Architects_Daughter/ArchitectsDaughter-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face{
+  font-family: "BadScript";
+  src: url("fonts/Bad_Script/BadScript-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face{
+  font-family: "Poiret-One";
+  src: url("fonts/Poiret_One/PoiretOne-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face{
+  font-family: "Stalinist-One";
+  src: url("fonts/Stalinist_One/StalinistOne-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face{
+  font-family: "Chalk";
+  src: url("fonts/Ds-Eraser-Cyr/DSEraserCyrFont.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}

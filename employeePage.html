@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="keywords" content="shop, buy, cart, smart">
+  <meta name="description" content="Парикмахерский салон Анна г. Саратов. Записаться на стрижку можно по телефону: 8(800)555-35-35 ">
+  <title>Парикмахерская "Анна"</title>
+  <link rel="shortcut icon" href="https://www.publicdomainpictures.net/pictures/130000/nahled/white-scissors.jpg" type="image/x-icon">
+  <link rel = "stylesheet" href = "employeeStyle.css">
+  <link rel = "stylesheet" href = "fonts.css">
+</head>
+<body>
+  <div class = "container">
+    <div id = "name" class = "name">
+    </div>
+    <div class = "main-info">
+      <div class = "img">
+        <img id = "img" width="500px">
+      </div>
+      <div class = "text">
+        <div id = "info" class = "info"></div>
+        <div  id = "haircuts" class = "haircuts"></div>
+      </div>
+    </div>
+    <div id = "contacts" class = "contact"></div>
+  </div>
+  <script>
+
+  var data = '[{"id" : 1,"name" : "Епифанцев Сергей", "text" : "Уроженец заводского района всегда знал, чему хочет посвятить свою жизнь. Он всегда был творческой натурой, в школе отлично разбирался в искусстве. Мальчишкой хотел стать режиссером. Жизнь решила иначе. С тех пор работает у нас.","img" : "https://lh3.googleusercontent.com/proxy/nDuzdjFJaRKNWIl6r_MEYGIf9pvzTjH1-2a08oj2E2O1oUlbzC6GotWekdezLoRcaHaTIDsxImm1Q5-cGYZR3B8E0dDd2P3G4WYuhJ0yxfjWazMytTn5ext0b9mo4zT4glwEioixI0Tjd24T4wTJOdlSU2P5sZCa66fpGLNy_f0a4g","haircut" : "Боб,Каре,Лестница,Каскад,Топ нот,Гранж","contact" : "89543216543,dontwriteme@yandex.ru,@kekjik,@followek"}, {"id" : 2,"name" : "Астафьев Савелий","text" : "","img" : "","haircut" : "","contact" : ""}, {"id" : 3,"name" : "Бережникова Алла","text" : "","img" : "","haircut" : "","contact" : ""}, {"id" : 4,"name" : "Покровская Наталья","text" : "","img" : "","haircut" : "","contact" : ""}, {"id" : 5,"name" : "Черных Светлана","text" : "","img" : "","haircut" : "","contact" : ""}, {"id" : 6,"name":"Зайцева Ольга","text" : "","img" : "","haircut" : "","contact" : ""}]';
+  GetData();
+  function GetData() {
+    var score = decodeURIComponent(location.search.substr(1)).split('&');
+    score.splice(0, 1);
+    var result = score[0];
+    var datalist = JSON.parse(data);
+    document.getElementById("name").innerHTML = datalist[result].name;
+    document.getElementById("info").innerHTML = datalist[result].text;
+    document.getElementById("img").src = datalist[result].img;
+    var haircutsArr = datalist[result].haircut.split(",");
+    var newblocks='';
+    for (var i = 0; i < haircutsArr.length; i++){
+      newblocks += "<strong><div class = " + "haircutBlock" + ">"+ haircutsArr[i] +"</div></strong>";
+    }
+    document.getElementById("haircuts").innerHTML += newblocks;
+
+    var contactsArr = datalist[result].contact.split(",");
+    var newcont='';
+    newcont += "<div class = " + "contactblock " + "><img src="+"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMyFe4ZDQmU0bytFsPEfbURlA4T-AlZSBt7w&usqp=CAU"+"><strong><div class = " + "contact " + ">"+ contactsArr[0] +"</div></strong></div>";
+    newcont += "<div class = " + "contactblock " + "><img src="+"https://png.pngtree.com/png-vector/20190804/ourlarge/pngtree-mailbox-mail-love-letter-letterbox-flat-color-icon-vector-png-image_1649804.jpg"+"><strong><div class = " + "contact " + ">"+ contactsArr[1] +"</div></strong></div>";
+    newcont += "<div class = " + "contactblock " + "><img src="+"https://st2.depositphotos.com/2562843/8107/v/600/depositphotos_81073882-stock-illustration-vector-camera-icon.jpg"+"><strong><div class = " + "contact " + ">"+ contactsArr[2] +"</div></strong></div>";
+    newcont += "<div class = " + "contactblock " + "><img src="+"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAgVBMVEUelsj////I2uqpyd0AkMUAj8URk8cAksYAjcTx+fyKw9/6/f7u9vr3+/2s1OjV6fPe7vbB3u14utpUqtKhzuWUxuBvtNcpnMtAo8/F4e9Xq9PD3+3n8/nA1ujO5vGEwN2r1OjP3eygx9620eVksdXS5PCJvtyz0OVLpM9ys9Y1n8yJFY/KAAAMlklEQVR4nO2da2OiPBOGQUMingERaq22rtvl9f//wDfIQQ4JOUwQbJ/72+62LpcZMpPJZGLZP13W0A/Qu/4jfH31T7habrxdeN4Ht8iyiDNziGVFt2B/DnfeZrnq/f/vk9Ddvof7JEJUBGNsVUX/TNJ/iJJ9+L51e3yKvgiP3jyISEpmdSslJVEw9449PUkfhK7nR4gQEVuNkxAU+V4fY2macLEJA4RU4CqYCAXhZmH4icwSbuaxozR27bF04vnG6DMZJNzOI0IAdIUIieZbc49linC1TmYm8HLIWbI25UfMEG7Plua7xxNG1tnMQJogPF2NWGdThFxPBp4OTujFhofvIYxib3BCL3b64rszOmBGGOFb0tv4lYwoeRuMcHvonS9jPEDmHH1C1+/VPmuMjq8fz+kSLnZWH/MnT8Ta6UZzmoSbBD2RLxVKNIM5PcL5U17AujCaP43wFD17ADOhSCcC0CAMnUH4UjnhEwi3wTADmAkFyo5DlfBzgDewKozWvRIu/OEstJDjq/kNJcLj030ESyhQSlqpEJ6sYS20ELZU5lQFws/Z0GilZgovozxhOAYLLYTk3YY04X5MgBRxb5hwcRgXIEU8SE6pcoRu8syFhJxIIreikiJ043FMonXhWApRhtC9jRGQIt5kECUIxwooiSgmHKeJZpIxVCHhIhkvIEVMhDOqkDAY3yxaFTlACUfm6NsSun4B4ahCNbZEAVw34Xr8gBTxU5/wNJ7VRJeczsVUF+Fx6EeXVteSuINwEYzZT1SFgw6f0UHov8JLmAn5OoTr4ZNO8nL4i34u4fZ1RjAV4uZRuYQv8xJmwoEq4Qu4+rq4jp9DeHqllzATzytyCKOhn1dDkQrh/NVsNBVnf5FJuHlFQIrI3CVmEY570csXTmQJd685hHQQd3KE7tAPChAjbcMg9Medt+gSYcSnbcLt67nCh5x28NYmPLzmNJMJtxNTLcK3V51mMqFWmV+L8EU9RaG2x2gSeq89hHQQm/WoTcIRp/DlhONuQu+VJ9JMjtdJ+PJD2B7EOuHp1d/CVOjUQXgd3RAShFRDLHzlE25HFq9hFIfe++6m+FhkyyU8j4kQo8jP7U1xQU7OPMJVT8+qI+Ic1o+FgupiYMUhHM1OEx2+sLYVobiDUqvQrBKOI2DDyNq30mZqy4Fa6FYh3I5hLy21zmWTj84Qal/+7MgknA8+z2DH4pyt9NUISSXtViEcOEdKrfPKPeGk+gJVcqcPws2gQ0hQ8smwzlzKqSPySCw+CAc00tQ6O0/EKH/7FTMtCRdxLw8vIeQcPEHdz1r524/LTywJN8OsmwiJd3zrLKQ40VA5pU2UhOEARkqt8yx1XkvdU5Nys60kfP6OKHV9km0iluof/tgxLQjdJ0dsrcCsSzq7maj48grCp2agqOvzVY5M6GyklBmpglD9XdYWJzDr0F7j4XCR4C8InxXQ0MklVD5+pvVwRViTEx6fYqSdgVmq1du/j/bkutRaEqBljfAZryENzATWufmYTD7a84/ewxUvYk7Ye8jGXzY8hspLARk/pOeqi8AtJ+zXG2JErsLmDyfKxxpB3YcrPGJG6PY50aSBmdCzH1O+yQfTijXtK3IrhP2lEdM+M+LAbDXJAJldd3QrQ/KkYkb43tNEQ5xgLRGYbe58kwm7rZBuggy9Vwh7CbtpYDaXCcxcL+ObcJZQusFIHnxnhDpBQ7dS1/cugVcO4Mdf3g/opgDxvkJoOo+InXgnF1cfcwPlA2osLPKHSB6EK6NTKSZOO+HJ1uKtAOTPRvolaNlkeidcGpxoqG9Yyx6Y3+Z8bDeYS79CiyxLQmOVetiJ5BbtqVxPBhAwR2SV0XdCQ1Epmcku2u9fa8HH8fO5ABmyLDK9E5oo1aOTp/yinb4YJR/PDRY/qP9sWSHfnRDsDoXLoubA/JUFhAQjmUO8Eyrue7T4nETSN+TaVvh4fr4Q4NvH3yUhyOET5Kt1cFq9VwC5brAQoLQgc/l3Qv21E0Y3ad+Qa1MdQCGg7sLi/nBBSXjT/ASiljJLtfQqgKzlbkOgWtBbSagV0mAkk49vqDrDdLvBXCBHFpWEGr+MHI3Wm8cqnxQgsDxEm5Cui8Sr9pZWbzXAiZQBwMrQSkK17wmjQLQbxtK2zidwg7lgVfWkJFR6m1Gs023T9RqAct8RbGMalYQqGdeu45p8/W3wTSR/D1biMysJFcaQUSou1rHJJ3aDuWDJh8cYKphCq8hYrEVzADuWu03Bkg+P91Dhl5Rb3rVmGBk/Xwh6Xl6HEMdq0+iqOcOoAIIPepaEKjENkW6ylWrT5JPz84WAy7pHTKMUlyr0LV62BnDyoRQpALOcj7hUbW2BSXSWithOLT5O3p6nBSwHWFlbKH9V2CF7Ubq+5SLk/Xz5EbDXsLI+1FnjY0QOO769NoPQu76U+MAZssoaX/OFppDxnG2vLRcx6Upr8wScaCp5Gv1cGyZ0FdyKw1tB6B1QvVs18HxLJdcGswaM0PWz6gPaLkLRDRYCesNKvhSc86ZDmYT5GDFnGC1AaDFhJedtYt+CQkY+XVe9swGV8x22Ts1lXZV9C1N7T9hxvll8im6wELROq7L3ZG7/EAdfLEK9W3GANb3V/UODe8DYHKD21mjxKNU9YHP7+OTSBtTigx8VrO3jm6vFwNemmSr7+ULQHbFaLYbBepqoMcdoA4JfnVo9jcGaKDytEerfEAM+PFCriTJY14b/VzXTP/o34R2BdlWvazNZmxhXh/By0b64Ebr13qhNNFhfiv9UCacX3duaoPN7o77UYI0w+f6qEk4vmpYKPXXdqBE2WOeNkzohZdSyVOhzNOq8Tdbqk0rsPb3rouEyoG1yWrX6Bl9EEj684TRHVLdU6KHk1nkLg2dm8KE00z/TUqqWCqwPaZ+ZMVrpPWEQXhSTGNCFRevck8kiWlxG3/+mFUQlS11BfUX77JrB84d4/8UgpFJY6EMXFozzhybPkN4YVqo4p0InGsYZUpOBG/7HJpxOP2QtFbiwYJ0DNnmWG/tfTCudTpNA0lKBFsU8y23y+FpSc/gPBRhbUnEqdGuUeR7fpJkWYc2lCUj/bSZzjSGwaxynp4LBvhhF9H1pA6a3ioktFei7OH0xDJ5JKMKaCwMwvVVMaKmwiYbX28Rkfxry1XoPq9+f6MLNhWa1ZPHxvP40BnsM5UlFDqDQUoFbo9weQwb7RGXZmg+GiRY/EHVZKmylw+8TZTKpeLsTXtgjeFfX3SKwiaaj15fBfm33sObPhQ/YaamgOa+rX5vBnnt3f1EQch6YP6eCXsPOnnvm+ibeszU5IX9EOJYKWud090002fvyo5hpukwOHVg1KyC3Jeh9aW4QUzNNlxaX7k9kWiokLSbqX2oyI3X5+je9+JHoaRmWCvH3wh60JkO3OL7J3D6Lrg1LhWyNivsID9ELunn7LWRGl+gFPUg/b6fWEB8QWsn08x6mJ3vVUiGrX6me7MP01cdRmXcAZG7l+uoPdTfC7HwfxhPoTlC5uxGGut+CkKvvx5B3RPZ+i+HuKMHY3NK+k/Dn3zPzC+4KGryXqZaU7nv6BXd2/fx7137B3Xm/4P7Dn3+H5S+4h/QX3CX78+8D/gV3Oo/otoQuQe7lfgnHD7tb3bb3Y0dEolO7IkL7MPiNCZ0iwv4AQsJxX9mJE2GBjpDQdkd8yxWOxQenxYS2C8oN9Sl8kzgZLkE4WkQpQCnCkRqqjInKEtpuMr4ZlSRyzQvkCO3FYWx+ER0kyxwlCUfn+oWOXp1wXAGcKFTTIrTX41lpzLqDbV1C+ySzo/sENXdUzRHax2AMlooCpbMbSoT2wh8+PeX4audv1AjTNfGwloqVG1WpEtrbQS0VBcrHbpUJqdsYzlIdeScBIbRP0TDDiCL1dpt6hOn+4vPfRiwqnTZKaG+SZw8jStQ7+EAIbXtnPXO5QSxWEUK/hLbrO88yVez46g1h4YTUcRye8jpihR54hglt+y3pnRGjRPdEvwlC2/biXm0VO7F6O1GzhCljb+OIEZjPBCGNAK6kj3mVEI2G2m2ZIKRzztkyPJDpPVGQ+eUhM4S2vVonM4PnF2fJWq+5VFumCKmO88iItRIid0+UpAwSUm3msUNAJ3qIE3dffqwss4S2vdiEAdJ8JzFCQbjR70rElmnCVK7nRwgpjSUmCEW+wj088uqDMNXSmwcRoZgiTkzhSBTMPZ3OijLqizCVu30P9wnlTAe0gYpTMvr3UbIP37d9jF2hPgkzucuNtwu/98EtSi+lmSE630a3YP8d7rzNsk+2TP0TDq3/CF9fP5/w/5BzyjOHCBYcAAAAAElFTkSuQmCC"+"><strong><div class = " + "contact " + ">"+ contactsArr[3] +"</div></strong></div>";
+    document.getElementById("contacts").innerHTML += newcont;
+  };
+
+
+  </script>
+</body>
+</html>

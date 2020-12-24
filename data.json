@@ -1,0 +1,43 @@
+data = [{
+  "id" : 2,
+  "name" : "Астафьев Савелий",
+  "text" : "",
+  "img" : "",
+  "haircut" : "",
+  "contact" : ""
+  },{
+      "id" : 1,
+      "name" : "Епифанцев Сергей",
+      "text" : "",
+      "img" : "",
+      "haircut" : "",
+      "contact" : ""
+    },  {
+      "id" : 3,
+      "name" : "Покровская Наталья",
+      "text" : "",
+      "img" : "",
+      "haircut" : "",
+      "contact" : ""
+      }, {
+      "id" : 4,
+      "name" : "Черных Светлана",
+      "text" : "",
+      "img" : "",
+      "haircut" : "",
+      "contact" : ""
+      }, {
+      "id" : 5,
+      "name" : "Бережникова Алла",
+      "text" : "",
+      "img" : "",
+      "haircut" : "",
+      "contact" : ""
+      }, {
+      "id" : 6,
+      "name" : "Зайцева Ольга",
+      "text" : "",
+      "img" : "",
+      "haircut" : "",
+      "contact" : ""
+}]
